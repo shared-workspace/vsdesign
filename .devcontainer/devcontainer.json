@@ -11,14 +11,18 @@
 	}
   },
   "forwardPorts": [6080, 5901],
-	"portsAttributes": {
-		"6080": {
-			"label": "VNC web client (noVNC)",
-			"onAutoForward": "silent"
-		},
-		"5901": {
-			"label": "VNC TCP port",
-			"onAutoForward": "silent"
-		}
+  "postCreateCommand": "./.devcontainer/post-create.sh",
+  "portsAttributes": {
+	"6080": {
+		"label": "VNC web client (noVNC)",
+		"onAutoForward": "silent"
+	},
+	"5901": {
+		"label": "VNC TCP port",
+		"onAutoForward": "silent"
 	}
+  },
+  "hostRequirements": {
+	"memory": "9gb"
+  }
 }
