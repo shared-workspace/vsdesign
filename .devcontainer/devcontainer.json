@@ -1,6 +1,8 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
   "name": "VSDesign",
+  "build": {
+		"dockerfile": "Dockerfile"
+  },
   "features": {
 	"ghcr.io/devcontainers/features/desktop-lite:1": {
 	  "version": "latest",
@@ -11,18 +13,18 @@
 	}
   },
   "forwardPorts": [6080, 5901],
-  "postCreateCommand": "./.devcontainer/post-create.sh",
+  // "postCreateCommand": "chmod +x .devcontainer/post-create.sh && ./.devcontainer/post-create.sh",
   "portsAttributes": {
-	"6080": {
-		"label": "VNC web client (noVNC)",
-		"onAutoForward": "silent"
-	},
-	"5901": {
-		"label": "VNC TCP port",
-		"onAutoForward": "silent"
-	}
+		"6080": {
+			"label": "VNC web client (noVNC)",
+			"onAutoForward": "silent"
+		},
+		"5901": {
+			"label": "VNC TCP port",
+			"onAutoForward": "silent"
+		}
   },
   "hostRequirements": {
-	"memory": "9gb"
+		"memory": "9gb"
   }
 }
